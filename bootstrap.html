@@ -1,10 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Taqueria</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taqueria - El Rinconcito</title>
 
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap-icons/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-heart-pulse-fill text-danger me-2"></i>Taqueria
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicio a domicilio">Servicio a Domicilio</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section id="inicio" class="bg-white py-5 text-center shadow-sm">
+        <div class="container py-4">
+            <h1 class="display-4 fw-bold text-success">EL RINCONCITO</h1>
+            <p class="lead text-secondary mb-4">Tu mejor opción</p>
+            <img src="assets/img/chihuahua.jpeg" alt="Perro feliz" class="img-fluid rounded-4 shadow" style="max-height: 400px; width: 100%; object-fit: cover;">
+        </div>
+    </section>
+
+    <section id="servicio a domicilio" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold text-success">Tenemos Servicio a Domicilio</h2>
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm  p-3">
+                        <div class="card-body">
+                            <i class="bi bi-clipboard2-pulse fs-1 text-success mb-3"></i>
+                            <h3 class="card-title h5">Tacos</h3>
+                            <p class="card-text text-muted">
+                                <ol>
+                                    <li>Suadero</li>
+                                    <li>Pastor</li>
+                                    <li>Campechanos</li>
+                                    <li>Longaniza</li>
+                                    <li>Bistec</li>
+                            Precio $20
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="card-body">
+                            <i class="bi bi-shield-plus fs-1 text-success mb-3"></i>
+                            <h3 class="card-title h5">Tortas</h3>
+                            <p class="card-text text-muted">
+                                <ol>
+                            <li>Suadero</li>
+                            <li>Pastor</li>
+                            <li>Campechanos</li>
+                            <li>Longaniza</li>
+                            <li>Bistec</li>
+                            Precio $65, Precio $75 con queso
+                        </ol>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm  p-3">
+                        <div class="card-body">
+                            <i class="bi bi-scissors fs-1 text-success mb-3"></i>
+                            <h3 class="card-title h5">Bebidas</h3>
+                            <p class="card-text text-muted">
+                                <ol>
+                            <li>Horchata</li>
+                            <li>Jamaica</li>
+                            <li>Limon</li>
+                            <li>Refrescos</li>
+                            <li>Maracuya</li>
+                            Precio $35 litro, Precio $25 1/2 litro
+                        </ol>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="bg-white py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card shadow border-0 p-4 rounded-4">
+                        <h2 class="text-center mb-4 fw-bold text-success">Agenda una Cita</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombreBS" class="form-label fw-bold">Tu Nombre</label>
+                                <input type="text" class="form-control" id="nombreBS" placeholder="Ej: Juan Pérez" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mascotaBS" class="form-label fw-bold">Nombre de tu Mascota</label>
+                                <input type="text" class="form-control" id="mascotaBS" placeholder="Ej: Firulais" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensajeBS" class="form-label fw-bold">Motivo de la consulta</label>
+                                <textarea class="form-control" id="mensajeBS" rows="4" placeholder="Describe los síntomas o el servicio que necesitas..." required></textarea>
+                            </div>
+                            <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-success btn-lg">Enviar Solicitud</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p class="mb-0">&copy; 2023 VetCare. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="assets/js/bootstrap.js"></script>
 </body>
 </html>
