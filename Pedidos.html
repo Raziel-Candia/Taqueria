@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taquería - Agregar Orden</title>
+    <style>
+        /* Estilos Generales y Colores */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fcf8f2; /* Fondo crema suave */
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Contenedor Principal (Tarjeta Ordenada) */
+        .contenedor-orden {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h2 {
+            color: #d32f2f; /* Rojo taquería / apetitoso */
+            margin-top: 0;
+            border-bottom: 2px solid #f4c430; /* Detalle en amarillo */
+            padding-bottom: 10px;
+        }
+
+        /* Formulario ordenado en filas verticales */
+        .grupo-formulario {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #555555;
+        }
+
+        /* Estilos de los campos de entrada */
+        input[type="text"], textarea {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #d32f2f;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Botón de Enviar */
+        .btn-enviar {
+            background-color: #2e7d32; /* Verde éxito */
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        .btn-enviar:hover {
+            background-color: #1b5e20;
+        }
+
+        /* Mensaje de éxito */
+        .mensaje-gracias {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Enlace Volver sin color azul */
+        .enlace-volver {
+            display: inline-block;
+            margin-top: 15px;
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .enlace-volver:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor-orden">
+    <h2>Agrega tu orden</h2>
+
+    <form>
+        <div class="grupo-formulario">
+            <label for="nombre">Tu Nombre</label>
+            <input type="text" id="nombre" placeholder="Ej: fulanito de tal">
+        </div>
+
+        <div class="grupo-formulario">
+            <label for="domicilio">Domicilio</label>
+            <input type="text" id="domicilio" placeholder="Ej: priv. Lucia">
+        </div>
+
+        <div class="grupo-formulario">
+            <label for="orden">Orden</label>
+            <textarea id="orden" placeholder="Escribe tu orden... (Ej: 3 de pastor, 2 de suadero)"></textarea>
+        </div>
+
+        <button type="button" class="btn-enviar">Enviar Orden</button>
+    </form>
+
+    <div class="mensaje-gracias">
+        ¡Gracias por tu orden!
+    </div>
+
+    <!-- Cambia "index.html" por el nombre real de tu página de inicio -->
+    <a href="bootstrap.html" class="enlace-volver">← Volver al inicio</a>
+</div>
+
+</body>
+</html>
