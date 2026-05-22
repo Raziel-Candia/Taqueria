@@ -76,22 +76,35 @@
             border-radius: 6px;
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, transform 0.1s;
         }
 
         .btn-enviar:hover {
             background-color: #1b5e20;
         }
 
-        /* Mensaje de éxito */
+        .btn-enviar:active {
+            transform: scale(0.98); /* Efecto de click */
+        }
+
+        /* Mensaje de éxito modificado */
         .mensaje-gracias {
             margin-top: 20px;
-            padding: 10px;
+            padding: 12px;
             background-color: #e8f5e9;
             color: #2e7d32;
+            border: 1px solid #c8e6c9;
             border-radius: 6px;
             text-align: center;
-            font-weight: 500;
+            font-weight: bold;
+            display: none; /* TRUCO: Oculto al inicio por defecto */
+            animation: aparecer 0.4s ease-out forwards;
+        }
+
+        /* Animación suave para que aparezca el aviso */
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Enlace Volver sin color azul */
@@ -113,32 +126,50 @@
 <div class="contenedor-orden">
     <h2>Agrega tu orden</h2>
 
-    <form>
+    <form id="formulario-tacos">
         <div class="grupo-formulario">
             <label for="nombre">Tu Nombre</label>
-            <input type="text" id="nombre" placeholder="Ej: fulanito de tal">
+            <input type="text" id="nombre" placeholder="Ej: fulanito de tal" required>
         </div>
 
         <div class="grupo-formulario">
             <label for="domicilio">Domicilio</label>
-            <input type="text" id="domicilio" placeholder="Ej: priv. Lucia">
+            <input type="text" id="domicilio" placeholder="Ej: priv. Lucia" required>
         </div>
 
         <div class="grupo-formulario">
             <label for="orden">Orden</label>
-            <textarea id="orden" placeholder="Escribe tu orden... (Ej: 3 de pastor, 2 de suadero)"></textarea>
+            <textarea id="orden" placeholder="Escribe tu orden... (Ej: 3 de pastor, 2 de suadero)" required></textarea>
         </div>
 
-        <button type="button" class="btn-enviar">Enviar Orden</button>
+        <button type="submit" class="btn-enviar">Enviar Orden</button>
     </form>
 
-    <div class="mensaje-gracias">
-        ¡Gracias por tu orden!
+    <div class="mensaje-gracias" id="alerta-exito">
+        🎉 ¡Pedido realizado correctamente! Gracias por tu orden.
     </div>
 
-    <!-- Cambia "index.html" por el nombre real de tu página de inicio -->
     <a href="bootstrap.html" class="enlace-volver">← Volver al inicio</a>
 </div>
+
+<script>
+    document.getElementById('formulario-tacos').addEventListener('submit', function(event) {
+        // 1. Evitamos que la página se recargue y borre todo de golpe
+        event.preventDefault();
+
+        // 2. Obtenemos el contenedor del mensaje de éxito
+        const mensajeExito = document.getElementById('alerta-exito');
+
+        // 3. Mostramos el mensaje (cambiando el 'display: none' a 'block')
+        mensajeExito.style.display = 'block';
+
+        // 4. Limpiamos los campos del formulario para que quede listo para otra orden
+        this.reset();
+
+        // Opcional: Si quieres que el mensaje se quite solito después de 5 segundos, quita las barras '//' de abajo:
+        // setTimeout(() => { mensajeExito.style.display = 'none'; }, 5000);
+    });
+</script>
 
 </body>
 </html>
