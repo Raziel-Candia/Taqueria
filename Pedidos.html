@@ -2,17 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taquería - Agregar Orden</title>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons/bootstrap-icons.css">
+
     <style>
-        /* Estilos Generales y Colores */
+        /* Mantenemos tu diseño de fondo y agregamos compatibilidad con el footer */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fcf8f2; /* Fondo crema suave */
-            color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/img/taqueria-barrio-mixto-cdmx.avif');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
 
         /* Contenedor Principal (Tarjeta Ordenada) */
@@ -20,19 +23,19 @@
             background-color: #ffffff;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 450px;
+            margin: 0 auto; /* Centra la tarjeta horizontalmente */
         }
 
         h2 {
-            color: #d32f2f; /* Rojo taquería / apetitoso */
+            color: #d32f2f; /* Rojo taquería */
             margin-top: 0;
             border-bottom: 2px solid #f4c430; /* Detalle en amarillo */
             padding-bottom: 10px;
         }
 
-        /* Formulario ordenado en filas verticales */
         .grupo-formulario {
             display: flex;
             flex-direction: column;
@@ -45,7 +48,6 @@
             color: #555555;
         }
 
-        /* Estilos de los campos de entrada */
         input[type="text"], textarea {
             padding: 10px;
             border: 1px solid #cccccc;
@@ -65,7 +67,6 @@
             min-height: 80px;
         }
 
-        /* Botón de Enviar */
         .btn-enviar {
             background-color: #2e7d32; /* Verde éxito */
             color: white;
@@ -84,10 +85,9 @@
         }
 
         .btn-enviar:active {
-            transform: scale(0.98); /* Efecto de click */
+            transform: scale(0.98);
         }
 
-        /* Mensaje de éxito modificado */
         .mensaje-gracias {
             margin-top: 20px;
             padding: 12px;
@@ -97,17 +97,15 @@
             border-radius: 6px;
             text-align: center;
             font-weight: bold;
-            display: none; /* TRUCO: Oculto al inicio por defecto */
+            display: none; /* Oculto al inicio */
             animation: aparecer 0.4s ease-out forwards;
         }
 
-        /* Animación suave para que aparezca el aviso */
         @keyframes aparecer {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Enlace Volver sin color azul */
         .enlace-volver {
             display: inline-block;
             margin-top: 15px;
@@ -121,55 +119,79 @@
         }
     </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-<div class="contenedor-orden">
-    <h2>Agrega tu orden</h2>
-
-    <form id="formulario-tacos">
-        <div class="grupo-formulario">
-            <label for="nombre">Tu Nombre</label>
-            <input type="text" id="nombre" placeholder="Ej: fulanito de tal" required>
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top" style="background: orangered">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="bootstrap.html">
+            <i class="bi bi-heart-pulse-fill text-danger me-2"></i>Taqueria
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="bootstrap.html#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link active" href="Pedidos.html">Servicio a Domicilio</a></li>
+            </ul>
         </div>
-
-        <div class="grupo-formulario">
-            <label for="domicilio">Domicilio</label>
-            <input type="text" id="domicilio" placeholder="Ej: priv. Lucia" required>
-        </div>
-
-        <div class="grupo-formulario">
-            <label for="orden">Orden</label>
-            <textarea id="orden" placeholder="Escribe tu orden... (Ej: 3 de pastor, 2 de suadero)" required></textarea>
-        </div>
-
-        <button type="submit" class="btn-enviar">Enviar Orden</button>
-    </form>
-
-    <div class="mensaje-gracias" id="alerta-exito">
-        🎉 ¡Pedido realizado correctamente! Gracias por tu orden.
     </div>
+</nav>
 
-    <a href="bootstrap.html" class="enlace-volver">← Volver al inicio</a>
-</div>
+<header class="text-center py-4 shadow-sm text-white">
+    <div class="container">
+        <h1 class="fw-bold" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">EL RINCONCITO</h1>
+        <p class="lead mb-0 text-warning" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">Servicio Express</p>
+    </div>
+</header>
+
+<main class="container flex-grow-1 my-5 d-flex align-items-center">
+    <div class="contenedor-orden">
+        <h2>Agrega tu orden</h2>
+
+        <form id="formulario-tacos">
+            <div class="grupo-formulario">
+                <label for="nombre">Tu Nombre</label>
+                <input type="text" id="nombre" placeholder="Ej: fulanito de tal" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="domicilio">Domicilio</label>
+                <input type="text" id="domicilio" placeholder="Ej: priv. Lucia" required>
+            </div>
+
+            <div class="grupo-formulario">
+                <label for="orden">Orden</label>
+                <textarea id="orden" placeholder="Escribe tu orden... (Ej: 3 de pastor, 2 de suadero)" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar Orden</button>
+        </form>
+
+        <div class="mensaje-gracias" id="alerta-exito">
+            🎉 ¡Pedido realizado correctamente! Gracias por tu orden.
+        </div>
+
+        <a href="bootstrap.html" class="enlace-volver">← Volver al inicio</a>
+    </div>
+</main>
+
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+        <p class="mb-0">&copy; 2026. Taqueria de Alo y Alan</p>
+    </div>
+</footer>
+
+<script src="assets/js/bootstrap.js"></script>
 
 <script>
     document.getElementById('formulario-tacos').addEventListener('submit', function(event) {
-        // 1. Evitamos que la página se recargue y borre todo de golpe
         event.preventDefault();
-
-        // 2. Obtenemos el contenedor del mensaje de éxito
         const mensajeExito = document.getElementById('alerta-exito');
-
-        // 3. Mostramos el mensaje (cambiando el 'display: none' a 'block')
         mensajeExito.style.display = 'block';
-
-        // 4. Limpiamos los campos del formulario para que quede listo para otra orden
         this.reset();
-
-        // Opcional: Si quieres que el mensaje se quite solito después de 5 segundos, quita las barras '//' de abajo:
-        // setTimeout(() => { mensajeExito.style.display = 'none'; }, 5000);
     });
 </script>
-
 </body>
 </html>

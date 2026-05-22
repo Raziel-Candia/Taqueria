@@ -6,11 +6,9 @@
     <title>Taqueria - El Rinconcito</title>
 
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/bootstrap-icons/bootstrap-icons.css">
 </head>
-<body class="bg-light">
-<body class="bg-light" style="background-image: url(assets/img/taqueria-barrio-mixto-cdmx.avif); background-size: cover; background-attachment: fixed; background-position: center;">
+<body class="bg-light d-flex flex-column min-vh-100" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/img/taqueria-barrio-mixto-cdmx.avif'); background-size: cover; background-attachment: fixed; background-position: center;">
 
 <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top" style="background: orangered">
     <div class="container">
@@ -22,50 +20,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Menu</a>
-                <li class="nav-item">
-                    <a class="nav-link" href="Pedidos.html">Servicio a Domicilio</a>
-                </li>
-
-
+                <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Menu</a></li> <li class="nav-item"><a class="nav-link" href="Pedidos.html">Servicio a Domicilio</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<main>
-    <section id="inicio" class=" py-5 text-center shadow-sm">
-        <div class="container py-4">
-            <h1 class="display-2 fw-bold text-white">EL RINCONCITO</h1>
-            <h3 class="display-6 fw-bold text-white">Tu mejor opción</h3>
+<header id="inicio" class="py-5 text-center shadow-sm">
+    <div class="container py-5">
+        <h1 class="display-1 fw-bold text-white text-shadow" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">EL RINCONCITO</h1>
+        <h3 class="display-6 fw-bold text-warning" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">Tu mejor opción</h3>
+    </div>
+</header>
 
-        </div>
+<main class="container flex-grow-1 my-5 text-white">
+    <section id="servicio-a-domicilio" class="py-5 bg-dark bg-opacity-75 rounded-4 p-4 text-center">
+        <h2 class="fw-bold text-warning mb-3">¡Servicio a Domicilio!</h2>
+        <p class="lead">¿Te da flojera salir por el trompo? ¡Nosotros te lo llevamos calientito hasta tu cantón!</p>
+        <a href="Pedidos.html" class="btn btn-lg btn-danger rounded-pill px-4 mt-2 fw-bold shadow-sm">Ordene Ya Aquí</a>
     </section>
-
-    <section id="servicio a domicilio" class="py-5">
-    </section>
-
-
 </main>
 
-<footer class=" text-white text-center py-4">
+<footer class="bg-dark text-white text-center py-4 mt-auto">
     <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-<br>
-        <br>
-        <br>
-        <br>
-        <br<br> <br>
-
-        <p class="mb-0">&copy; 2026.Taqueria de Alo y Alan</p>
+        <p class="mb-0">&copy; 2026. Taqueria de Alo y Alan</p>
     </div>
 </footer>
 
